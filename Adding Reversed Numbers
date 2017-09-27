@@ -1,0 +1,42 @@
+#include<iostream>
+#include<sstream>
+#include<algorithm>
+#define _1 ios_base::sync_with_stdio(false)
+#define _2 cin.tie(NULL)
+#define _3 cout.tie(NULL)
+
+using namespace std;
+int main()
+{
+    //_1;_2;_3;
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        string s1, s2;
+        cin >> s1 >> s2;
+        //cout << s1 << endl; cout << s2 << endl;
+        reverse(s1.begin(), s1.end());
+        reverse(s2.begin(), s2.end());
+        int a, b;
+        stringstream ss1, ss2, ss3;
+        ss1 << s1;
+        ss1 >> a;
+        //cout <<a << endl;
+        ss2 << s2;
+        ss2 >> b;
+        //cout << b <<endl;
+        a = a+b;
+        //cout <<a << endl;
+        //ss.str(string());
+        ss3 << a;
+        string s  = ss3.str();
+        reverse(s.begin(), s.end());
+        stringstream ss4;
+        ss4 << s;
+        int ans;
+        ss4 >> ans;
+        cout << ans << endl;
+    }
+    return 0;
+}
